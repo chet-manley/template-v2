@@ -1,0 +1,161 @@
+/* universal reset */
+* {box-sizing:border-box;margin:0;padding:0;border:0;font:inherit;}
+*::before, *::after {box-sizing:border-box;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, dialog, figcaption, figure, footer, header, hgroup, main, menu, nav, section {display:block;}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+/* default font definitions */
+h1, h2, h3, h4 {
+	font-weight: 700;
+	font-family: Play,Arial,sans-serif;
+}
+h1 {
+	font-size: 140%;
+}
+h2 {
+	font-size: 125%;
+}
+h3 {
+	font-size: 110%;
+}
+h4 {
+	font-size: 100%;
+}
+p {
+	margin: 1em 0;
+	font-family: Ubuntu,Arial,sans-serif;
+}
+
+/* special text styling */
+.text-stroke-webkit {
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+	-webkit-text-stroke: 2px rgba(0,0,0,0.6);
+	-webkit-text-fill-color: rgba(255,255,255,1.0);
+}
+.text-stroke-fallback {
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.6), -1px -1px 1px rgba(0,0,0,0.6), 1px -1px 1px rgba(0,0,0,0.6), -1px 1px 1px rgba(0,0,0,0.6), 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* define the app body (previously the wrapper element) */
+body {
+	position: relative;
+	min-width:800px;
+	font: normal normal 400 1em/1.2 Ubuntu,Arial,sans-serif;
+	background: #FFFFFF linear-gradient(
+ 		90deg,
+		rgba(200,200,215,0.75) 5%,
+		rgba(50,50,80,0.45) 50%,
+		rgba(200,200,215,0.75) 95%
+	) center repeat fixed;
+}
+
+/* define the primary navigation header */
+nav {
+	z-index: 2;
+	position: absolute;
+	top: 20px;
+	right: 50px;
+	left: 50px;
+	border-radius: 10px;
+	/*
+	box-shadow: 0 0 10px 2px rgba(0,0,0,0.1), inset 0 0 10px 2px rgba(255,255,255,0.2);
+	*/
+	box-shadow: 
+		0 2px 7px rgba(0,0,0,0.25),
+		inset 0 1px rgba(255,255,255,0.2),
+		inset 0 5px 5px rgba(225,225,255,0.25),
+		inset 0 10px 10px rgba(200,200,255,0.3),
+		inset 0 -5px 10px rgba(0,0,25,0.25);
+	padding: 5px 75px;
+	background: rgba(100,150,255,0.25);
+	color: #000;
+	font-weight: 700;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
+}
+
+/* define the primary content section */
+main {
+	z-index: 1;
+	position: absolute;
+	top: 10px;
+	right: 100px;
+	left: 100px;
+	box-shadow: 0 0 5px 2px rgba(50,50,75,0.9), inset 0 0 5px 2px rgba(200,200,200,0.5);
+	/*
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	*/
+	border-radius: 20px;
+	padding: 55px 10px 10px;
+	color: #FFF;
+	background: #C0C0C0 url("../img/bg/congruent_outline.png") center repeat fixed;
+}
+
+/* menu */
+menu {
+	outline: 1px solid red;
+}
+menu[type="channels"] {
+	position: relative;
+	left: -10px;
+	float: left;
+	margin: 0 10px 10px 0;
+}
+menu[type="channels"]::before {
+	content: attr(label);
+	color: #FFFFFF;
+}
+menu[type="channels"] menuitem {
+	margin: 2px;
+}
+
+/* thermometer style with indicator "light"  */
+.thermometer {
+	position: relative;
+	display: block;
+	width: 150px;
+	margin: 10px 0;
+	border-radius: 0 22px 22px 0;
+	border: 5px solid #000000;
+	border-left: none;
+	background: #C0C0C0;
+	color: #4a1c03;
+}
+/* bulb */
+.thermometer::before {
+	content: '';
+	position: absolute;
+	top: -10px;
+	left: -31px;
+	display: block;
+	width: 40px;
+	height: 40px;
+	z-index: -1;
+	border-radius: 20px;
+	border: 5px solid #000000;
+	/* sets the indicator color */
+	background: radial-gradient(ellipse at center, #FF0000 0%, #FF9999 80%);
+	/* should match background of parent */
+	box-shadow: inset 0 0 0 6px #C0C0C0;
+}
+/* blend the borders into the parent */
+.thermometer::after {
+	content: '';
+	position: absolute;
+	top: -7px;
+	left: -28px;
+	display: block;
+	width: 48px;
+	height: 34px;
+	z-index: -2;
+	border-radius: 24px/17px;
+	border: 5px solid #000000;
+	background: transparent;
+}
