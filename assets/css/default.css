@@ -10,6 +10,11 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
+.clrfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
 /* default font definitions */
 h1, h2, h3, h4 {
 	font-weight: 700;
@@ -141,7 +146,7 @@ menu[type="channels"] menuitem.active {
 }
 /* indicator */
 menu[type="channels"] menuitem::before {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 2px;
 	left: 2px;
@@ -170,4 +175,12 @@ menu[type="channels"] .emergency-red::before {
 }
 @keyframes flash-red {
 	50% {background-color: #FF0000;}
+}
+
+/* temp graph div */
+.graph {
+	width: 200px;
+	height: 200px;
+	border-radius: 10px;
+	background: #FFF;
 }
