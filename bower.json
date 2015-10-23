@@ -1,0 +1,22 @@
+{
+  "name": "template-v2",
+  "homepage": "https://github.com/waliworld/template-v2",
+  "authors": [
+    "waliworld <wali1world@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pure": "~0.6.0"
+  }
+}
