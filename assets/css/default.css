@@ -176,8 +176,9 @@ menu[type="channels"] .emergency-red::before {
 
 /* temp graph div */
 #channelGraph {
-	width: 200px;
-	height: 200px;
+	width: 550px;
+	height: 300px;
+	margin: 0 auto;
 	border-radius: 10px;
 	background: #FFF;
 }
