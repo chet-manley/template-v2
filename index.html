@@ -8,10 +8,12 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="assets/css/fonts.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="assets/css/default.css" />
 	<script src="assets/libs/angular.min.js"></script>
+	<script src="assets/libs/angular-route.min.js"></script>
+	<script src="app/app.js"></script>
 </head>
-<body>
-	<nav>app navigation bar</nav>
-	<main>
+<body ng-app="app">
+	<nav>link 1 | link 2</nav>
+	<main ng-view>
 		<menu type="channels" label="">
 			<menuitem class="emergency-red">All Channels</menuitem>
 			<menuitem class="green active">Customer Care</menuitem>
